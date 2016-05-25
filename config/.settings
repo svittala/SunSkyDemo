@@ -1,0 +1,27 @@
+{
+    "username": "svittala@sunskydemo.com", 
+    "environment": "custom", 
+    "project_name": "SunSkyDemo", 
+    "workspace": "/home/siva/Salesforce/workspace", 
+    "org_url": "https://sunskydemo.my.salesforce.com", 
+    "namespace": "", 
+    "id": "MESMUI974SVYFN1A5NW0ID0DYPIBEJ3F", 
+    "metadata_container": "1dc360000006Bh6AAE", 
+    "subscription": [
+        "AccountSharingRules", 
+        "ApexClass", 
+        "ApexComponent", 
+        "ApexPage", 
+        "ApexTrigger", 
+        "CustomObject", 
+        "Flow", 
+        "Layout", 
+        "PermissionSet", 
+        "Profile", 
+        "Role", 
+        "Settings", 
+        "SharingSet", 
+        "StaticResource", 
+        "Workflow"
+    ]
+}

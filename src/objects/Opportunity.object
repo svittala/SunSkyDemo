@@ -76,6 +76,20 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Credit_Card_Authorization__c</fullName>
+        <defaultValue>&quot;100&quot;</defaultValue>
+        <description>Credit card authorization for future transactions</description>
+        <externalId>false</externalId>
+        <inlineHelpText>CC Auth code for future transaction - 100 means error</inlineHelpText>
+        <label>Credit Card Authorization</label>
+        <length>16</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Description</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
@@ -258,6 +272,12 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>SyncedQuoteId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>TotalOpportunityQuantity</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
@@ -362,4 +382,25 @@
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>Read</sharingModel>
+    <webLinks>
+        <fullName>Authorize_Card</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>page</linkType>
+        <masterLabel>Authorize Card</masterLabel>
+        <openType>replace</openType>
+        <page>Get_Credit_Card_Info</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_jobs</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Create Jobs</masterLabel>
+        <openType>noSidebar</openType>
+        <page>Create_Job_Records</page>
+        <protected>false</protected>
+    </webLinks>
 </CustomObject>

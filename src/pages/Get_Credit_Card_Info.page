@@ -1,0 +1,5 @@
+<apex:page showHeader="false" sidebar="false"  standardController="Opportunity">
+    <flow:interview name="Capture_Credit_Card_Authorization" finishLocation="/{!Opportunity.Id}">
+        <apex:param name="OpptyID" value="{!Opportunity.Id}"/>
+    </flow:interview>
+</apex:page>

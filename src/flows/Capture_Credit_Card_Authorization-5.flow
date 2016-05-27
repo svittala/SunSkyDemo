@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Update_Opportunity_Record</name>
+        <label>Update Opportunity Record</label>
+        <locationX>185</locationX>
+        <locationY>356</locationY>
+        <assignmentItems>
+            <assignToReference>varOpportunityRec.Credit_Card_Authorization__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>12AUTH12</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateOpportunity</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>check_if_open</name>
+        <label>check if open</label>
+        <locationX>185</locationX>
+        <locationY>156</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Open_opportunity</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varOpportunityRec.IsClosed</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Credit_Card_Information</targetReference>
+            </connector>
+            <label>Open opportunity</label>
+        </rules>
+    </decisions>
+    <label>Capture Credit Card Authorization</label>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>FetchOpportunityInformation</name>
+        <label>FetchOpportunityInformation</label>
+        <locationX>184</locationX>
+        <locationY>48</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>check_if_open</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>OpptyID</elementReference>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <outputReference>varOpportunityRec</outputReference>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>Description</queriedFields>
+        <queriedFields>Amount</queriedFields>
+        <queriedFields>Credit_Card_Authorization__c</queriedFields>
+        <queriedFields>IsClosed</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>UpdateOpportunity</name>
+        <label>UpdateOpportunity</label>
+        <locationX>181</locationX>
+        <locationY>457</locationY>
+        <inputReference>varOpportunityRec</inputReference>
+    </recordUpdates>
+    <screens>
+        <name>Get_Credit_Card_Information</name>
+        <label>Get Credit Card Information</label>
+        <locationX>182</locationX>
+        <locationY>270</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <connector>
+            <targetReference>Update_Opportunity_Record</targetReference>
+        </connector>
+        <fields>
+            <name>DisplayOpptyInfo</name>
+            <fieldText>&lt;SPAN ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;&lt;B&gt;You are getting Credit Authorization for &lt;/B&gt;&lt;/FONT&gt;&lt;/SPAN&gt;&lt;TEXTFORMAT LEADING=&quot;2&quot;&gt;&lt;LI&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;Opportunity {!varOpportunityRec.Id} &lt;/FONT&gt;&lt;/LI&gt;&lt;/TEXTFORMAT&gt;&lt;TEXTFORMAT LEADING=&quot;2&quot;&gt;&lt;LI&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;{!varOpportunityRec.Description}&lt;/FONT&gt;&lt;/LI&gt;&lt;/TEXTFORMAT&gt;&lt;TEXTFORMAT LEADING=&quot;2&quot;&gt;&lt;LI&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;For Amount {!varOpportunityRec.Amount}&lt;/FONT&gt;&lt;/LI&gt;&lt;/TEXTFORMAT&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>ScreenText</name>
+            <fieldText>Please Enter the Credit Card to be used for this transaction.</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>UI_First_Name</name>
+            <dataType>String</dataType>
+            <fieldText>First Name</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>UILast_Name</name>
+            <dataType>String</dataType>
+            <fieldText>Last Name</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Credit_Card_Number</name>
+            <dataType>Number</dataType>
+            <fieldText>Credit Card Number</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <scale>16</scale>
+        </fields>
+        <fields>
+            <name>Auth_Code</name>
+            <dataType>Number</dataType>
+            <fieldText>Auth Code</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <scale>3</scale>
+        </fields>
+    </screens>
+    <startElementReference>FetchOpportunityInformation</startElementReference>
+    <variables>
+        <description>Opportunity ID passed</description>
+        <name>OpptyID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Opportunity Record</description>
+        <name>varOpportunityRec</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+</Flow>

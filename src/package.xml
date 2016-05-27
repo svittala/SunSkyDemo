@@ -36,6 +36,7 @@
         <members>FeedItem</members>
         <members>ForecastingCategoryMapping</members>
         <members>Idea</members>
+        <members>Job__c</members>
         <members>Lead</members>
         <members>Macro</members>
         <members>MacroAction</members>
@@ -50,6 +51,8 @@
         <members>Pricebook2</members>
         <members>PricebookEntry</members>
         <members>Product2</members>
+        <members>Quote</members>
+        <members>QuoteLineItem</members>
         <members>SOSSession</members>
         <members>SOSSessionActivity</members>
         <members>SignupRequest</members>

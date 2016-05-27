@@ -42,6 +42,48 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Dhruvsoft__Discount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Discount</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Dhruvsoft__Unit_Price_Before_Discount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Unit Price Before Discount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Dhruvsoft__converted_form_opportunity__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>converted form opportunity</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Dhruvsoft__opportunity_line_item_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>opportunity line item Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>EndDate</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -82,5 +124,15 @@
     <fields>
         <fullName>UnitPrice</fullName>
         <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>scheduled_product__c</fullName>
+        <description>Confirm if the Scheduling is enabled for this product</description>
+        <externalId>false</externalId>
+        <formula>IF( AND( Dhruvsoft__converted_form_opportunity__c, NOT(isnull(Dhruvsoft__opportunity_line_item_Id__c )), OR  (PricebookEntry.Product2.CanUseQuantitySchedule,PricebookEntry.Product2.CanUseRevenueSchedule ) ), TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Scheduled Product</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
     </fields>
 </CustomObject>

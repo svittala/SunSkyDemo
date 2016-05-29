@@ -1,12 +1,12 @@
 {
     "username": "svittala@sunskydemo.com", 
-    "environment": "custom", 
     "project_name": "SunSkyDemo", 
-    "workspace": "/home/siva/Salesforce/workspace", 
     "org_url": "https://sunskydemo.my.salesforce.com", 
     "namespace": "", 
+    "metadata_container": "1dc360000006EyRAAU", 
+    "environment": "custom", 
+    "workspace": "/home/siva/Salesforce/workspace", 
     "id": "MESMUI974SVYFN1A5NW0ID0DYPIBEJ3F", 
-    "metadata_container": "1dc360000006Bh6AAE", 
     "subscription": [
         "AccountSharingRules", 
         "ApexClass", 

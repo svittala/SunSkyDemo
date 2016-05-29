@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
     <customButtons>Authorize_Card</customButtons>
-    <customButtons>Dhruvsoft__Convert_To_Order</customButtons>
     <customButtons>Create_jobs</customButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
@@ -160,6 +159,31 @@
         </relatedContentItems>
     </relatedContent>
     <relatedLists>
+        <fields>Product2</fields>
+        <fields>ServiceDate</fields>
+        <fields>Description</fields>
+        <fields>Quantity</fields>
+        <fields>HasSchedule</fields>
+        <fields>ListPrice</fields>
+        <fields>UnitPrice</fields>
+        <fields>Discount</fields>
+        <fields>TotalPrice</fields>
+        <fields>occurrence_count__c</fields>
+        <relatedList>RelatedLineItemList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Amount__c</fields>
+        <fields>Job_Date__c</fields>
+        <fields>Job_Assignment__c</fields>
+        <fields>Quantity__c</fields>
+        <fields>Job_Completed__c</fields>
+        <fields>Commission_Paid__c</fields>
+        <relatedList>Job__c.Opportunity__c</relatedList>
+        <sortField>Job_Date__c</sortField>
+        <sortOrder>Asc</sortOrder>
+    </relatedLists>
+    <relatedLists>
         <fields>TASK.SUBJECT</fields>
         <fields>TASK.WHO_NAME</fields>
         <fields>ACTIVITY.TASK</fields>
@@ -179,48 +203,10 @@
         <relatedList>RelatedHistoryList</relatedList>
     </relatedLists>
     <relatedLists>
-        <relatedList>RelatedContactRoleList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>ACCOUNT.NAME</fields>
-        <fields>PARTNER.ROLE</fields>
-        <fields>PARTNER.PRIMARY</fields>
-        <relatedList>RelatedPartnerList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <relatedList>RelatedCompetitorList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>Product2</fields>
-        <fields>ServiceDate</fields>
-        <fields>Description</fields>
-        <fields>Quantity</fields>
-        <fields>HasSchedule</fields>
-        <fields>ListPrice</fields>
-        <fields>UnitPrice</fields>
-        <fields>Discount</fields>
-        <fields>TotalPrice</fields>
-        <relatedList>RelatedLineItemList</relatedList>
-    </relatedLists>
-    <relatedLists>
         <relatedList>RelatedNoteList</relatedList>
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedOpportunityHistoryList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>Job__c.Opportunity__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>QUOTE.QUOTENUMBER</fields>
-        <fields>QUOTE.NAME</fields>
-        <fields>QUOTE.ISSYNCING</fields>
-        <fields>QUOTE.EXPIRATIONDATE</fields>
-        <fields>Discount</fields>
-        <fields>GrandTotal</fields>
-        <fields>CreatedBy</fields>
-        <relatedList>RelatedQuoteList</relatedList>
     </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>

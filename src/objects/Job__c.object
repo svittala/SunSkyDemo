@@ -103,6 +103,18 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>JobProduct__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>JobProduct</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Jobs</relationshipLabel>
+        <relationshipName>Jobs</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Job_Assignment__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>Assigned To</description>
@@ -135,6 +147,18 @@
         <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Job_Pricebook__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Job Pricebook</label>
+        <referenceTo>Pricebook2</referenceTo>
+        <relationshipLabel>Jobs</relationshipLabel>
+        <relationshipName>Jobs</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Opportunity__c</fullName>

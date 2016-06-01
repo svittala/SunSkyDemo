@@ -68,21 +68,20 @@
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Amount__c</fullName>
+        <fullName>Assignment_Count__c</fullName>
+        <description>count of the employees assigned to this job</description>
         <externalId>false</externalId>
-        <label>Amount</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
+        <label>Assignment Count</label>
+        <summaryForeignKey>Job_Assignment__c.Job__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
         <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
+        <type>Summary</type>
     </fields>
     <fields>
         <fullName>Commission_Amount__c</fullName>
-        <description>Commission Amount</description>
+        <description>Commission Amount Per Employee Assigned for the Job</description>
         <externalId>false</externalId>
-        <formula>Total_Price__c / 2</formula>
+        <formula>Unit_Price__c / ( 2 )</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <inlineHelpText>Commission Amount to the Employee at 50% rate</inlineHelpText>
         <label>Commission Amount</label>
@@ -115,18 +114,14 @@
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Job_Assignment__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <description>Assigned To</description>
+        <fullName>Job_Assigned__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Job Assignment Completed ( When the Assigned Count = Quantity Requested by Customer</description>
         <externalId>false</externalId>
-        <inlineHelpText>The Worker performing this Job</inlineHelpText>
-        <label>Job Assignment</label>
-        <referenceTo>Contact</referenceTo>
-        <relationshipLabel>Jobs</relationshipLabel>
-        <relationshipName>Jobs</relationshipName>
-        <required>false</required>
+        <inlineHelpText>Job Assignment Completed</inlineHelpText>
+        <label>Job Assigned</label>
         <trackTrending>false</trackTrending>
-        <type>Lookup</type>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Job_Completed__c</fullName>
@@ -187,11 +182,11 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Total_Price__c</fullName>
-        <description>Total Price of the service to the customer</description>
+        <fullName>Unit_Price__c</fullName>
+        <description>Unit Price of the service to the customer</description>
         <externalId>false</externalId>
-        <inlineHelpText>Total Price of the service to the customer</inlineHelpText>
-        <label>Total Price</label>
+        <inlineHelpText>Unit Price of the service to the customer</inlineHelpText>
+        <label>Unit Price</label>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
@@ -203,11 +198,10 @@
         <fullName>All</fullName>
         <columns>NAME</columns>
         <columns>Account__c</columns>
-        <columns>Amount__c</columns>
         <columns>Job_Date__c</columns>
         <columns>Opportunity__c</columns>
         <columns>Quantity__c</columns>
-        <columns>Total_Price__c</columns>
+        <columns>Unit_Price__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
@@ -219,4 +213,18 @@
     <pluralLabel>Jobs</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>All_Assignment_Completed</fullName>
+        <active>true</active>
+        <description>Confirm the Assignment is Complete</description>
+        <errorConditionFormula>AND(  Job_Assigned__c ,(Quantity__c  &lt;&gt;   Assignment_Count__c))</errorConditionFormula>
+        <errorMessage>Please make sure to assign employees before marking the Job as assigned.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Job_Completed</fullName>
+        <active>true</active>
+        <description>Confirm the Assignment is Complete before Job can be marked as complete</description>
+        <errorConditionFormula>AND(   Job_Completed__c , Not(Job_Assigned__c ))</errorConditionFormula>
+        <errorMessage>Please make sure to assign employees before closing the Job.</errorMessage>
+    </validationRules>
 </CustomObject>

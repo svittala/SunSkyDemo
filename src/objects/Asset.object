@@ -85,6 +85,22 @@
         <picklist>
             <picklistValues>
                 <fullName>None</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BiWeekly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Weekly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quarterly</fullName>
                 <default>false</default>
             </picklistValues>
             <sorted>false</sorted>

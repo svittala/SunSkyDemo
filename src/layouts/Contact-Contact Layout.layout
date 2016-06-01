@@ -27,6 +27,10 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>RecordTypeId</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Phone</field>
             </layoutItems>
             <layoutItems>
@@ -253,7 +257,15 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>Job__c.Job_Assignment__c</relatedList>
+        <fields>Job__c.Account__c</fields>
+        <fields>Job__c.Job_Date__c</fields>
+        <fields>Job__c.Quantity__c</fields>
+        <fields>Job__c.Unit_Price__c</fields>
+        <fields>Job__c.Commission_Paid__c</fields>
+        <fields>Job__c.Job_Completed__c</fields>
+        <relatedList>Job_Assignment__c.Employee__c</relatedList>
+        <sortField>Job__c.Job_Date__c</sortField>
+        <sortOrder>Asc</sortOrder>
     </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
@@ -261,4 +273,10 @@
     <showInteractionLogPanel>true</showInteractionLogPanel>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
+    <summaryLayout>
+        <masterLabel>00h36000003i7rG</masterLabel>
+        <sizeX>4</sizeX>
+        <sizeY>0</sizeY>
+        <summaryLayoutStyle>Default</summaryLayoutStyle>
+    </summaryLayout>
 </Layout>

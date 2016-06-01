@@ -55,6 +55,17 @@
         <fullName>ProductCode</fullName>
     </fields>
     <fields>
+        <fullName>Product_Family__c</fullName>
+        <description>Product Family</description>
+        <externalId>false</externalId>
+        <formula>TEXT(PricebookEntry.Product2.Family)</formula>
+        <inlineHelpText>Product Family</inlineHelpText>
+        <label>Product Family</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Quantity</fullName>
     </fields>
     <fields>
@@ -71,12 +82,21 @@
     </fields>
     <fields>
         <fullName>occurrence_count__c</fullName>
+        <description>Number of Visits for this order</description>
         <externalId>false</externalId>
-        <label>occurrence count</label>
+        <inlineHelpText>Enter the Number of Visits for this order</inlineHelpText>
+        <label>Number of Visits</label>
         <precision>18</precision>
-        <required>false</required>
+        <required>true</required>
         <scale>0</scale>
         <type>Number</type>
         <unique>false</unique>
     </fields>
+    <validationRules>
+        <fullName>Discounted_Orders_Check</fullName>
+        <active>true</active>
+        <description>Discounted orders cannot have number of visits &lt; 2</description>
+        <errorConditionFormula>AND((Product_Family__c  &lt;&gt; &apos;None&apos;) ,  ( occurrence_count__c  &lt; 2))</errorConditionFormula>
+        <errorMessage>To Get Repeated Order Discounts the Number of Visits should be greater than 2</errorMessage>
+    </validationRules>
 </CustomObject>

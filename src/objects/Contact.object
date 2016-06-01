@@ -253,6 +253,21 @@
         <language>en_US</language>
     </listViews>
     <listViews>
+        <fullName>All_Employees</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CONTACT.TITLE</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>CONTACT.REPORTS_TO.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ACCOUNT.NAME</field>
+            <operation>equals</operation>
+            <value>Cleaning Company</value>
+        </filters>
+        <label>All Employees</label>
+    </listViews>
+    <listViews>
         <fullName>BirthdaysThisMonth</fullName>
         <columns>FULL_NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -285,6 +300,159 @@
         </filters>
         <label>New This Week</label>
     </listViews>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypes>
+        <fullName>Customers</fullName>
+        <active>true</active>
+        <description>Standard Customer</description>
+        <label>Customers</label>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>External Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Word of mouth</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Name</picklist>
+            <values>
+                <fullName>Dr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mrs%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prof%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Employees</fullName>
+        <active>true</active>
+        <description>All Employees are also Contacts</description>
+        <label>Employees</label>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>External Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Word of mouth</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Name</picklist>
+            <values>
+                <fullName>Dr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mrs%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prof%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
     <searchLayouts>
         <customTabListAdditionalFields>FULL_NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>

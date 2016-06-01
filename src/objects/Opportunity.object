@@ -44,6 +44,31 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
+    <businessProcesses>
+        <fullName>Cleaning Company</fullName>
+        <description>Sales Process for Cleaning Company</description>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proposal%2FPrice Quote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospecting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Value Proposition</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>true</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -272,12 +297,6 @@
         <type>Picklist</type>
     </fields>
     <fields>
-        <fullName>SyncedQuoteId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>TotalOpportunityQuantity</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
@@ -364,6 +383,95 @@
         </filters>
         <label>Won</label>
     </listViews>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypes>
+        <fullName>Cleaning_Company</fullName>
+        <active>true</active>
+        <businessProcess>Cleaning Company</businessProcess>
+        <description>Cleaning Company Record type</description>
+        <label>Cleaning_Company</label>
+        <picklistValues>
+            <picklist>ForecastCategoryName</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Omitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>External Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Word of mouth</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Existing Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Business</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
     <searchLayouts>
         <customTabListAdditionalFields>OPPORTUNITY.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>

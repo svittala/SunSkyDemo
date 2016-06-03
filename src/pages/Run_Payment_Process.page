@@ -1,0 +1,5 @@
+<apex:page showHeader="false" sidebar="false" >
+    <flow:interview name="Payment_Process" finishLocation="{!URLFOR('/home/home.jsp')}">
+
+   </flow:interview>
+</apex:page>

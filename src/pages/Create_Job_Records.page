@@ -1,5 +1,5 @@
 <apex:page showHeader="false" sidebar="false"  standardController="Opportunity">
-    <flow:interview name="Create_Job_Scheudle" finishLocation="/{!Opportunity.Id}">
+    <flow:interview name="Create_Jobs" finishLocation="/{!Opportunity.Id}">
         <apex:param name="OpptyID" value="{!Opportunity.Id}"/>
     </flow:interview>
 </apex:page>

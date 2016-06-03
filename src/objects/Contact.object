@@ -109,6 +109,24 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>Commission_Amount_Due__c</fullName>
+        <externalId>false</externalId>
+        <label>Commission Amount Due</label>
+        <summarizedField>Job_Assignment__c.Commission_Amount_Due__c</summarizedField>
+        <summaryForeignKey>Job_Assignment__c.Employee__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Commission_Paid__c</fullName>
+        <externalId>false</externalId>
+        <label>Commission Paid</label>
+        <summarizedField>Job_Assignment__c.Commission_Paid__c</summarizedField>
+        <summaryForeignKey>Job_Assignment__c.Employee__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
         <fullName>Department</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -143,6 +161,19 @@
     <fields>
         <fullName>Jigsaw</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Job_Completed__c</fullName>
+        <externalId>false</externalId>
+        <label>Job Completed</label>
+        <summaryFilterItems>
+            <field>Job_Assignment__c.Job_Completed__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Job_Assignment__c.Employee__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
     </fields>
     <fields>
         <fullName>LastCURequestDate</fullName>
@@ -257,8 +288,9 @@
         <columns>FULL_NAME</columns>
         <columns>CONTACT.TITLE</columns>
         <columns>CONTACT.PHONE1</columns>
-        <columns>CONTACT.EMAIL</columns>
-        <columns>CONTACT.REPORTS_TO.NAME</columns>
+        <columns>Job_Completed__c</columns>
+        <columns>Commission_Amount_Due__c</columns>
+        <columns>Commission_Paid__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>ACCOUNT.NAME</field>
@@ -513,6 +545,30 @@
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
         <url>http://www.google.com/search?q={!Contact_FirstName} {!Contact_LastName}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Mass_Edit</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Mass Edit</masterLabel>
+        <openType>sidebar</openType>
+        <page>MassEditContact</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>Mass_Update</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Mass Update</masterLabel>
+        <openType>sidebar</openType>
+        <page>MassUpdateContact</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
     </webLinks>
     <webLinks>
         <fullName>SendGmail</fullName>

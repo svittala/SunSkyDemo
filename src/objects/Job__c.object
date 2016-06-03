@@ -56,16 +56,17 @@
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
         <fullName>Account__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
         <description>Relation ship to Account -</description>
         <externalId>false</externalId>
         <label>Account</label>
         <referenceTo>Account</referenceTo>
         <relationshipLabel>Jobs</relationshipLabel>
         <relationshipName>Jobs</relationshipName>
-        <required>false</required>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
         <trackTrending>false</trackTrending>
-        <type>Lookup</type>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <fields>
         <fullName>Assignment_Count__c</fullName>
@@ -102,18 +103,6 @@
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>JobProduct__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <label>JobProduct</label>
-        <referenceTo>Product2</referenceTo>
-        <relationshipLabel>Jobs</relationshipLabel>
-        <relationshipName>Jobs</relationshipName>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>Job_Assigned__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Job Assignment Completed ( When the Assigned Count = Quantity Requested by Customer</description>
@@ -144,16 +133,14 @@
         <type>Date</type>
     </fields>
     <fields>
-        <fullName>Job_Pricebook__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
+        <fullName>Job_Revenue__c</fullName>
         <externalId>false</externalId>
-        <label>Job Pricebook</label>
-        <referenceTo>Pricebook2</referenceTo>
-        <relationshipLabel>Jobs</relationshipLabel>
-        <relationshipName>Jobs</relationshipName>
+        <label>Job Revenue</label>
+        <precision>18</precision>
         <required>false</required>
+        <scale>2</scale>
         <trackTrending>false</trackTrending>
-        <type>Lookup</type>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Opportunity__c</fullName>
@@ -167,6 +154,17 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Pay_Period__c</fullName>
+        <description>Pay Period ( 1 thru 14 is Period 1 and 15 thru end of month is Period 2)</description>
+        <externalId>false</externalId>
+        <formula>if (  DAY(Job_Date__c) &lt; 15 , True,False)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Pay Period ( 1 thru 14 is Period 1 and 15 thru end of month is Period 2)</inlineHelpText>
+        <label>Pay Period 1</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Quantity__c</fullName>
@@ -200,8 +198,10 @@
         <columns>Account__c</columns>
         <columns>Job_Date__c</columns>
         <columns>Opportunity__c</columns>
+        <columns>Job_Completed__c</columns>
+        <columns>Commission_Paid__c</columns>
         <columns>Quantity__c</columns>
-        <columns>Unit_Price__c</columns>
+        <columns>Assignment_Count__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
@@ -212,7 +212,7 @@
     </nameField>
     <pluralLabel>Jobs</pluralLabel>
     <searchLayouts/>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>ControlledByParent</sharingModel>
     <validationRules>
         <fullName>All_Assignment_Completed</fullName>
         <active>true</active>

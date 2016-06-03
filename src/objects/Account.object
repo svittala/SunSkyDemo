@@ -132,6 +132,15 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>Booked_Revenue__c</fullName>
+        <externalId>false</externalId>
+        <label>Booked Revenue</label>
+        <summarizedField>Job__c.Job_Revenue__c</summarizedField>
+        <summaryForeignKey>Job__c.Account__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
         <fullName>Description</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -280,6 +289,32 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>Job_Assigned__c</fullName>
+        <externalId>false</externalId>
+        <label>Job Assigned</label>
+        <summaryFilterItems>
+            <field>Job__c.Job_Assigned__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Job__c.Account__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Job_Completed__c</fullName>
+        <externalId>false</externalId>
+        <label>Job Completed</label>
+        <summaryFilterItems>
+            <field>Job__c.Job_Completed__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Job__c.Account__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
         <fullName>Name</fullName>
         <trackFeedHistory>true</trackFeedHistory>
     </fields>
@@ -344,6 +379,21 @@
         </picklist>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Realized_Revenue__c</fullName>
+        <description>Revenue from executed jobs</description>
+        <externalId>false</externalId>
+        <label>Realized Revenue</label>
+        <summarizedField>Job__c.Job_Revenue__c</summarizedField>
+        <summaryFilterItems>
+            <field>Job__c.Job_Completed__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Job__c.Account__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
     </fields>
     <fields>
         <fullName>ShippingAddress</fullName>
@@ -562,6 +612,30 @@
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
         <url>http://search.hoovers.com/cgi-bin/hol_search?which=company&amp;query_string={!Account_Name}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Mass_Edit</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Mass Edit</masterLabel>
+        <openType>sidebar</openType>
+        <page>MassEditAccount</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>Mass_Update</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Mass Update</masterLabel>
+        <openType>sidebar</openType>
+        <page>MassUpdateAccount</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
     </webLinks>
     <webLinks>
         <fullName>YahooMaps</fullName>

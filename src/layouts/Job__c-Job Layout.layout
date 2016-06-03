@@ -32,6 +32,10 @@
                 <behavior>Readonly</behavior>
                 <field>Commission_Amount__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Job_Revenue__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -55,12 +59,8 @@
                 <field>Assignment_Count__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>JobProduct__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Job_Pricebook__c</field>
+                <behavior>Readonly</behavior>
+                <field>Pay_Period__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>

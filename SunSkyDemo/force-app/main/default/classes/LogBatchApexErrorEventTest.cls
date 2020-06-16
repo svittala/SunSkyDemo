@@ -1,14 +1,15 @@
+
 @isTest
-private class TestLogExceptionTrigger {
-    @isTest static void TestPostLogException() {
+private  class LogBatchApexErrorEventTest  {
+    @isTest static void TestBatchApexLogErrorEvent() {
         // Test data setup
         // Create an account with an opportunity, and then try to delete it
-        ExceptionEvent__e Log_e = new ExceptionEvent__e();
-        Log_e.Cause__c = 'Cause 1';
-        Log_e.Line_Number__c = 1;
-        Log_e.Message__C ='Message1';
-        Log_e.Stack_Trace_String__c='Stack Trace 1';
-        Log_e.Type_Name__c = 'MathException';
+        BatchApexErrorEvent Log_e = new BatchApexErrorEvent();
+        Log_e.AsyncApexJobId  = 'Cause 1';
+        Log_e.Phase = 'START';
+        Log_e.Message ='Message1';
+        Log_e.StackTrace='Stack Trace 1';
+      
         test.startTest();
         Database.SaveResult sr = Eventbus.publish(Log_e);
         test.stopTest();

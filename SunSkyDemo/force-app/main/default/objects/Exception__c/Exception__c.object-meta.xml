@@ -164,6 +164,7 @@
         <customTabListAdditionalFields>Cause__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Line_Number__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Message__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>JobScope__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Stack_Trace_String__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Type_Name__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
@@ -184,6 +185,7 @@
         <searchResultsAdditionalFields>Message__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Stack_Trace_String__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Type_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>JobScope__c</searchResultsAdditionalFields>>
         <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>

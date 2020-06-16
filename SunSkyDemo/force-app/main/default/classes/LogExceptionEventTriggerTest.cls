@@ -1,5 +1,5 @@
 @isTest
-private class TestLogExceptionTrigger {
+private class LogExceptionEventTriggerTest {
     @isTest static void TestPostLogException() {
         // Test data setup
         // Create an account with an opportunity, and then try to delete it

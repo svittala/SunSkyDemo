@@ -8,13 +8,17 @@
         <types>
             <members>ExceptionUtils</members>
             <members>ExceptionUtilsTest</members>
-            <members>TestLogExceptionTrigger</members>
+            <members>LogExceptionEventTriggerTest</members>
+            <members>LogBatchApexErrorEventTest</members>
             <members>BatchApexExample</members>
             <members>BatchApexExampleTest</members>
+            <members>BatchLeadConvert</members>
+            <members>BatchLeadConvertTest</members>
             <name>ApexClass</name>
     </types>
     <types>
-        <members>LogException</members>
+        <members>LogExceptionEvent</members>
+        <members>LogBatchApexErrorEvent</members>
         <name>ApexTrigger</name>
     </types>
 

@@ -6,10 +6,12 @@
         <name>CustomObject</name>
     </types>
         <types>
-            <members>TestLogExceptionTrigger</members>
-            <members> ExceptionUtils</members>
+            <members>ExceptionUtils</members>
             <members>ExceptionUtilsTest</members>
-            <name>ApexClasses</name>
+            <members>TestLogExceptionTrigger</members>
+            <members>BatchApexExample</members>
+            <members>BatchApexExampleTest</members>
+            <name>ApexClass</name>
     </types>
     <types>
         <members>LogException</members>

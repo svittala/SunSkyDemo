@@ -2,36 +2,19 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>Exception__c</members>
+        <members>ExceptionEvent__e</members>
         <name>CustomObject</name>
     </types>
-
-    <types>
-        <members>*</members>
-        <name>ApexComponent</name>
+        <types>
+            <members>TestLogExceptionTrigger</members>
+            <members> ExceptionUtils</members>
+            <members>ExceptionUtilsTest</members>
+            <name>ApexClasses</name>
     </types>
     <types>
-        <members>*</members>
-        <name>ApexPage</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>ApexTestSuite</name>
-    </types>
-    <types>
-        <members>*</members>
+        <members>LogException</members>
         <name>ApexTrigger</name>
     </types>
-    <types>
-        <members>*</members>
-        <name>AuraDefinitionBundle</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>LightningComponentBundle</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>StaticResource</name>
-    </types>
+
     <version>48.0</version>
 </Package>

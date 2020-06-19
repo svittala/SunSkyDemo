@@ -1,0 +1,6 @@
+<apex:page controller="contentController">
+<apex:form >
+    <apex:commandbutton action="{!go}" value="go"/>
+    <apex:inputFile value="{!file.versionData}" fileName="{!file.PathOnClient}" />
+</apex:form>
+</apex:page>
